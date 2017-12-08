@@ -2,7 +2,7 @@
 
 #outer-wrapper {
   display:flex;
-  flex-flow: row wrap;
+/*   flex-flow: row wrap; */
   width: 100vw;
   height: 100vh;
   background-color: green;
@@ -13,35 +13,48 @@
 }
 
 #vs {
-  width:200px;
-  height:200px;
+/*   width:200px; */
+/*   height:200px; */
 /*   border: 1px solid black; */
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -80px 0 0 -170px;
+  margin: -70px 0 0 -170px;
   z-index:100;
-  
-    
-  
+  animation-name:rotate;
+  animation-duration:1s;
+  animation-timing-function:ease-in;
+  animation-iteration-count: infinite;  
 }
 
 .movie-poster-one-bg{
-  width:50vw;
+  width:0vw;
   height:100vh;
 /*   border: 1px solid black; */
-  padding: 10px;
-  margin: 30px;
+float: left;
   background-color: orange;
+
+}
+
+.grow-left{
+  animation-name: grow-left;
+  animation-duration: .5s;
+  animation-timing-function:ease-in;
+}
+
+.grow-right{
+  animation-name: grow-right;
+  animation-duration: .5s;
+  animation-timing-function:ease-in;
 }
 
 .movie-poster-two-bg{
-  width:50vw;
+  width:0vw;
   height:100vh;
 /*   border: 1px solid black; */
-  padding: 10px;
-  margin: 30px;
+float: left;
 background-color: yellow;
+
 }
 
 #generate{
@@ -54,6 +67,25 @@ background-color: yellow;
 }
 
 #bottom-box { 
-width: 1280px;
-height: 800px;
+position: absolute;
+    top: 87%;
+    left: 50%;
+    margin: -80px 0 0 -170px;
+    z-index: 100;
+}
+
+/* The animation code */
+@keyframes grow-left {
+    from {width:0vw}
+    to {width:50vw}
+}
+
+@keyframes grow-right {
+    from {width:0vw}
+    to {width:50vw}
+}
+
+@keyframes rotate {
+  0% {transform: rotate(0deg);}
+  50%{transform: rotate(7deg);}
 }
